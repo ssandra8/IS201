@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mexican Slang Quiz 🇲🇽</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f9f3ec, #fff0e0);
+      color: #333;
+      text-align: center;
+      padding: 30px;
+    }
+    .quiz-container {
+      max-width: 600px;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2em;
+      color: #d1495b;
+    }
+    .question {
+      margin: 20px 0;
+      font-size: 1.2em;
+    }
+    .option {
+      display: block;
+      background-color: #f7c59f;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      width: 80%;
+      transition: background 0.3s;
+    }
+    .option:hover {
+      background-color: #f4a261;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+    .emoji {
+      font-size: 2em;
+    }
+    button {
+      background-color: #264653;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1d3557;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Mexican Slang Quiz 🇲🇽</h1>
+    <div id="quiz"></div>
+    <div class="result" id="result"></div>
+    <button onclick="restartQuiz()">Try Again 🔁</button>
+  </div>
+
+  <script>
+    const quizData = [
+      {
+        question: "What does '¿Qué onda?' mean? 🤔",
+        options: ["What's up?", "What wave?", "How old are you?", "Where are you going?"],
+        answer: "What's up?"
+      },
+      {
+        question: "If someone says 'Estoy crudo', how do they feel? 🥴",
+        options: ["Hungry", "Tired", "Hungover", "Bored"],
+        answer: "Hungover"
+      },
+      {
+        question: "What is a 'chido' thing? 😎",
+        options: ["Boring", "Cool", "Cheap", "Annoying"],
+        answer: "Cool"
+      },
+      {
+        question: "If your friend says '¡No manches!', they are... 😲",
+        options: ["Laughing", "Shocked", "Tired", "Hungry"],
+        answer: "Shocked"
+      },
+      {
+        question: "What does 'fresa' mean when talking about a person? 🍓",
+        options: ["They love strawberries", "They are fancy/snobby", "They’re sporty", "They live on a farm"],
+        answer: "They are fancy/snobby"
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuiz() {
+      const quiz = document.getElementById("quiz");
+      const q = quizData[currentQuestion];
+      quiz.innerHTML = `
+        <div class="question">${q.question}</div>
+        ${q.options.map(opt => `<div class="option" onclick="selectOption(this)">${opt}</div>`).join('')}
+      `;
+    }
+
+    function selectOption(selected) {
+      const correct = quizData[currentQuestion].answer;
+      if (selected.textContent === correct) {
+        score++;
+        selected.style.backgroundColor = "#a8e6cf";
+      } else {
+        selected.style.backgroundColor = "#ffaaa5";
+      }
+      setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < quizData.length) {
+          loadQuiz();
+        } else {
+          showResult();
+        }
+      }, 700);
+    }
+
+    function showResult() {
+      const quiz = document.getElementById("quiz");
+      const result = document.getElementById("result");
+      quiz.innerHTML = "";
+      result.innerHTML = `You got ${score} out of ${quizData.length} right! 🎉`;
+    }
+
+    function restartQuiz() {
+      currentQuestion = 0;
+      score = 0;
+      document.getElementById("result").innerHTML = "";
+      loadQuiz();
+    }
+
+    loadQuiz();
+  </script>
+</body>
+</html>

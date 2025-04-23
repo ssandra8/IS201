@@ -1,0 +1,145 @@
+/* Background color and font*/
+body {
+    background-color: #f5e0e8; /* Soft pink background */
+    font-family: 'Arial', sans-serif; /* Font family for the page */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Main container for the content */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style for the introduction section */
+.intro-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #d859b2;
+    border-radius: 10px;
+}
+
+/* Styling for the image section */
+.image-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.image-section h2 {
+    color: #d859b2;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.intro-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.hobbies-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fdfdfd;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.hobbies-section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.hobbies-section ol,
+.hobbies-section ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+.hobbies-section li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.hobbies-section ol {
+    color: #d859b2; /* Pink color for list items */
+}
+
+/* Styling for YouTube video section */
+.video-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #d859b2;
+    border-radius: 10px;
+}
+
+/* Styling for Tableau section */
+.tableau-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #d859b2;
+    border-radius: 10px;
+}
+
+/* Style for professional page pink button s*/
+.pink-button {
+    display: inline-block;
+    background-color: #d859b2;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.pink-button:hover {
+    background-color: #b83a8a; /* Slightly darker pink when hovering */
+}
+
+/* Style for the Webapp pink button*/
+.webapp-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #d859b2; /* Pink background */
+    color: white; /* White text */
+    padding: 12px 25px;
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none; /* Remove underline */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for the button */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.webapp-link:hover {
+    background-color: #b83a8a; /* Darker pink on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Animation for the hover effect */
+.webapp-link:active {
+    transform: scale(1);
+}
+
+
+/* Header style */
+h1, h2 {
+    color: #d859b2;
+    text-align: center;
+}
